@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Redondo | Leroy Merlin — Shortlist CCP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #ffffff; --text: #1a1a1a; --accent: #78be20; --gray: #888; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+        header { padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+        .back-link { color: var(--gray); text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+        .logo { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; text-decoration: none; color: var(--text); }
+        .hero-case { padding: 100px 10% 80px 10%; }
+        .award-tag { color: var(--accent); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 20px; }
+        .hero-case h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; font-weight: 400; margin-bottom: 30px; }
+        .full-img { width: 100%; height: auto; display: block; }
+        .strategy-section { padding: 100px 10%; background: #f9f9f9; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .logic-box { border-left: 2px solid var(--accent); padding-left: 30px; }
+        .logic-item { margin-bottom: 40px; }
+        .logic-item h4 { font-size: 0.6rem; text-transform: uppercase; color: var(--gray); letter-spacing: 2px; margin-bottom: 10px; }
+        .logic-item p { font-size: 1rem; line-height: 1.5; font-weight: 500; }
+        .gallery { padding: 80px 8%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .gallery img { width: 100%; border: 1px solid #eee; }
+        .wide { grid-column: span 2; }
+        footer { padding: 100px 8%; text-align: center; border-top: 1px solid #eee; }
+        .next-link { font-family: 'Libre Baskerville', serif; font-size: 1.4rem; color: var(--gray); text-decoration: none; }
+        @media (max-width: 900px) { .strategy-section { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr; } .gallery .wide { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-link">← Portfólio</a>
+        <a href="index.html" class="logo">joão redondo.</a>
+    </header>
+    <section class="hero-case">
+        <span class="award-tag">Shortlist CCP — Open Brief '23</span>
+        <h1>Em tua casa, A+ para ti.</h1>
+        <p style="color:var(--gray); font-size: 1.2rem; line-height: 1.6;">Como transformar a frieza das normas técnicas de eficiência num benefício humano e aspiracional.</p>
+    </section>
+    <img src="images/leroy_capa.jpg" class="full-img" alt="Leroy Merlin Campaign">
+    <section class="strategy-section">
+        <div>
+            <h2 style="font-family:'Libre Baskerville'; font-weight:400; font-size:2rem; margin-bottom:20px;">O Insight</h2>
+            <p style="line-height:1.8; color:#444;">A eficiência energética não é sobre o que a casa poupa, é sobre o que a casa nos dá em troca: saúde, hobbies e tempo. O conceito "A+ (Há mais)" brinca com a escala energética para convidar à descoberta do habitat.</p>
+        </div>
+        <div class="logic-box">
+            <div class="logic-item"><h4>Conceito</h4><p>A+ (Há mais): A casa como extensão da nossa própria energia.</p></div>
+            <div class="logic-item"><h4>Reconhecimento</h4><p>Selecionado entre as 10 melhores propostas nacionais pelo CCP.</p></div>
+        </div>
+    </section>
+    <div class="gallery">
+        <img src="images/leroy_1.jpg" class="wide">
+        <img src="images/leroy_2.jpg">
+        <img src="images/leroy_3.jpg">
+    </div>
+    <footer>
+        <p style="margin-bottom: 20px; color: var(--gray); font-size: 0.8rem; text-transform: uppercase;">Próximo</p>
+        <a href="control.html" class="next-link">Control: Santos Populares →</a>
+    </footer>
+</body>
+</html>

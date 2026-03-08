@@ -3,46 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Redondo | Control — Case Study</title>
+    <title>João Redondo | Control — Santos Populares</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #050505; --text: #ffffff; --accent: #bc9c6c; --gray: #888; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.6; }
 
-        header { padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1a1a1a; }
+        header { padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; }
         .back-link { color: var(--gray); text-decoration: none; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
         .logo { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; text-decoration: none; color: #fff; }
 
-        .hero-case { padding: 100px 10% 60px 10%; text-align: center; }
+        .hero-case { padding: 80px 10% 40px 10%; text-align: center; }
         .award-tag { color: var(--accent); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 20px; }
-        .hero-case h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; font-weight: 400; margin-bottom: 30px; }
+        .hero-case h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.2rem, 6vw, 4.5rem); font-weight: 400; margin-bottom: 20px; }
 
-        .full-width-img { width: 100%; height: auto; margin: 40px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
+        .main-image { width: 100%; height: auto; display: block; margin-bottom: 4px; }
 
-        .case-content { padding: 80px 10%; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; }
-        .case-text h2 { font-family: 'Libre Baskerville', serif; font-size: 2.2rem; margin-bottom: 25px; color: var(--accent); font-weight: 400; }
-        .case-text p { font-size: 1.05rem; line-height: 1.8; color: #ccc; margin-bottom: 30px; }
+        .case-intro { padding: 80px 15%; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; }
+        .case-text h2 { font-family: 'Libre Baskerville', serif; font-size: 2rem; margin-bottom: 25px; color: var(--accent); font-weight: 400; }
+        .case-text p { font-size: 1.05rem; color: #ccc; margin-bottom: 20px; }
 
-        .meta-data { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px solid #222; padding-top: 40px; }
-        .meta-item h4 { font-size: 0.6rem; text-transform: uppercase; color: var(--gray); letter-spacing: 2px; margin-bottom: 12px; }
-        .meta-item p { font-size: 0.9rem; line-height: 1.4; color: #fff; }
+        .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-top: 1px solid #222; padding-top: 30px; }
+        .meta-item h4 { font-size: 0.6rem; text-transform: uppercase; color: var(--gray); letter-spacing: 2px; margin-bottom: 10px; }
+        .meta-item p { font-size: 0.85rem; color: #fff; }
 
-        .gallery { padding: 0 8% 100px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .gallery img { width: 100%; height: auto; border: 1px solid #1a1a1a; }
-        .wide { grid-column: span 2; }
+        .gallery { padding: 0 5% 100px 5%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; }
+        .gallery img { width: 100%; height: 100%; object-fit: cover; border: 1px solid #111; }
+        
+        /* Layout de grelha "High-End" */
+        .span-3 { grid-column: span 3; }
+        .span-2 { grid-column: span 2; }
+        .span-4 { grid-column: span 4; }
+        .span-6 { grid-column: span 6; }
 
-        .quote-section { padding: 150px 10%; text-align: center; background: #0a0a0a; border-top: 1px solid #111; }
-        .quote-section h3 { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem, 4vw, 3.2rem); font-style: italic; line-height: 1.3; font-weight: 400; }
+        .quote-block { grid-column: span 6; padding: 120px 10%; text-align: center; background: #0a0a0a; margin: 40px 0; }
+        .quote-block h3 { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-style: italic; font-weight: 400; }
 
         footer { padding: 100px 8%; text-align: center; border-top: 1px solid #1a1a1a; }
-        .next-link { font-family: 'Libre Baskerville', serif; font-size: 1.3rem; color: var(--gray); text-decoration: none; transition: 0.3s; }
-        .next-link:hover { color: #fff; }
+        .next-link { font-family: 'Libre Baskerville', serif; font-size: 1.2rem; color: var(--gray); text-decoration: none; }
 
-        @media (max-width: 900px) { .case-content { grid-template-columns: 1fr; } .gallery { grid-template-columns: 1fr; } .gallery .wide { grid-column: span 1; } }
+        @media (max-width: 900px) {
+            .case-intro { grid-template-columns: 1fr; padding: 40px 10%; }
+            .gallery { grid-template-columns: 1fr; }
+            .span-2, .span-3, .span-4, .span-6 { grid-column: span 1; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <a href="index.html" class="back-link">← Portfólio</a>
         <a href="index.html" class="logo">joão redondo.</a>
@@ -51,42 +60,46 @@
     <section class="hero-case">
         <span class="award-tag">Bronze / Lusófonos da Criatividade '25</span>
         <h1>A metê-lo, todos os Santos ajudam.</h1>
-        <p style="color: var(--gray); margin-top: 20px;">A audácia de uma marca que não tem medo de pecar.</p>
     </section>
 
-    <img src="images/control_hero_bus.jpg" class="full-width-img" alt="Control Santos Ativação">
+    <!-- Imagem Hero (Autocarro) -->
+    <img src="images/control_bus_side.jpg" class="main-image" alt="Ativação Control Carris">
 
-    <section class="case-content">
+    <section class="case-intro">
         <div class="case-text">
             <h2>O Insight Profano</h2>
-            <p>Os Santos Populares são o momento em que a tradição religiosa e a euforia profana colidem. Se Santo António é o santo casamenteiro, a Control é quem garante que o pecadilho da noite termina em segurança.</p>
-            <p>A estratégia focou-se em sequestrar a iconografia clássica — manjericos, luzes de arraial e o próprio caminho das marchas — para criar uma narrativa de facilitação do prazer com juízo.</p>
+            <p>Os Santos Populares são o auge do pecado lisboeta. Se Santo António é o casamenteiro oficial, a Control é a marca que garante que o "casamento" dura apenas uma noite — com a máxima segurança.</p>
+            <p>A estratégia passou por sequestrar a iconografia clássica das festas para criar uma narrativa de facilitação do prazer, dividida em fases de <em>teaser</em> e revelação.</p>
         </div>
         <div class="meta-data">
-            <div class="meta-item"><h4>Desafio</h4><p>Infiltrar a marca na cultura popular de Lisboa.</p></div>
-            <div class="meta-item"><h4>Estratégia</h4><p>Double-entendre precision & OOH de impacto.</p></div>
-            <div class="meta-item"><h4>Prémio</h4><p>Medalha de Bronze nos Lusófonos.</p></div>
-            <div class="meta-item"><h4>Meios</h4><p>OOH, Social Media, Arraiais Móveis.</p></div>
+            <div class="meta-grid">
+                <div class="meta-item"><h4>Briefing</h4><p>Integrar a Control nos Santos Populares de Lisboa.</p></div>
+                <div class="meta-item"><h4>Conceito</h4><p>Double-entendre precision.</p></div>
+                <div class="meta-item"><h4>Meios</h4><p>OOH, Social, Arraiais Móveis.</p></div>
+                <div class="meta-item"><h4>Craft</h4><p>Copywriting & Art Direction.</p></div>
+            </div>
         </div>
     </section>
 
     <div class="gallery">
-        <img src="images/control_lub_gel.jpg" class="wide" alt="Control Lub Gel Headline">
-        <img src="images/control_nature.jpg" alt="Control Nature Santos">
-        <img src="images/control_insta.jpg" alt="Control Instagram Mockup">
+        <img src="images/control_nature.jpg" class="span-4" alt="Control Nature">
+        <img src="images/control_lub_poster.jpg" class="span-2" alt="Control Lub Gel">
         
-        <div class="quote-section wide">
+        <div class="quote-block">
             <h3>"Não é santo, mas ajuda à festa."</h3>
-            <p style="color: var(--accent); margin-top: 25px; text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; font-weight: 700;">Headline — Campanha Lub Gel</p>
+            <p style="color:var(--accent); font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; margin-top:20px; font-weight:700;">Headline Principal</p>
         </div>
 
-        <img src="images/control_mupi.jpg" alt="Control Mupi Teaser">
-        <img src="images/control_bus_detail.jpg" alt="Control Carris Detail">
+        <img src="images/control_bus_back.jpg" class="span-3" alt="Control Bus Rear">
+        <img src="images/control_mupi.jpg" class="span-3" alt="Control Mupi">
+        <img src="images/control_truck.jpg" class="span-6" alt="Control Arraial Móvel">
+        <img src="images/control_outdoor.jpg" class="span-6" alt="Control Outdoor Night">
     </div>
 
     <footer>
-        <p style="margin-bottom: 20px; color: var(--gray); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Próximo Projeto</p>
-        <a href="#" class="next-link">Leroy Merlin: Eficiência do Silêncio →</a>
+        <p style="margin-bottom: 20px; color: var(--gray); font-size: 0.8rem; text-transform: uppercase;">Próximo Projeto</p>
+        <a href="leroy.html" class="next-link">Leroy Merlin: Eficiência do Silêncio →</a>
     </footer>
+
 </body>
 </html>

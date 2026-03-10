@@ -3,116 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Redondo — Copywriter Criativo & Estratégico</title>
+    <title>João Redondo — Copywriter Criativo</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #ffffff; --text: #111; --accent: #a68966; --gray: #666; --border: #eee; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
         
-        header { padding: 35px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border); }
+        header { padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border); }
         .logo { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--text); }
         nav a { text-decoration: none; color: var(--text); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-left: 35px; }
 
-        .hero { padding: 140px 10% 80px 10%; max-width: 1200px; }
-        .hero span { color: var(--accent); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; font-size: 0.7rem; }
-        .hero h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin: 25px 0; font-weight: 400; }
-        .hero p { font-size: 1.1rem; color: var(--gray); max-width: 650px; line-height: 1.7; }
+        .hero { padding: 160px 10% 100px 10%; max-width: 1200px; }
+        .hero span { color: var(--accent); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; font-size: 0.7rem; display: block; margin-bottom: 15px; }
+        .hero h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin: 0 0 40px 0; font-weight: 400; }
+        .hero p { font-size: 1.2rem; color: var(--gray); max-width: 750px; line-height: 1.7; }
 
-        .award-strip { display: flex; gap: 50px; margin-top: 50px; border-top: 1px solid var(--border); padding-top: 35px; }
-        .award-item h4 { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; }
-        .award-item p { font-size: 0.75rem; color: #999; }
+        /* Award Bar - Minimalista */
+        .awards { display: flex; gap: 60px; margin-top: 60px; }
+        .award-item { border-left: 1px solid var(--border); padding-left: 20px; }
+        .award-item h4 { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+        .award-item p { font-size: 0.8rem; color: #999; margin-top: 5px; }
 
-        .work-grid { padding: 60px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px 50px; }
-        .project { text-decoration: none; color: inherit; display: block; }
-        .project-img { width: 100%; aspect-ratio: 16/10; background: #f8f8f8; margin-bottom: 25px; border: 1px solid var(--border); overflow: hidden; transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
-        .project:hover .project-img { transform: translateY(-10px); border-color: var(--accent); }
+        /* Portfolio Grid - Agora apenas 2 projetos de impacto */
+        .work-grid { padding: 0 8% 150px 8%; }
+        .project { text-decoration: none; color: inherit; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: center; margin-bottom: 150px; }
+        .project.reverse { grid-template-columns: 0.8fr 1.2fr; }
+        
+        .project-img { width: 100%; aspect-ratio: 16/10; background: #f8f8f8; border: 1px solid var(--border); overflow: hidden; transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
+        .project:hover .project-img { transform: scale(1.02); border-color: var(--accent); }
         .project-img img { width: 100%; height: 100%; object-fit: cover; }
         
-        .project-tag { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 700; }
-        .project-title { font-family: 'Libre Baskerville', serif; font-size: 1.8rem; margin: 10px 0; font-weight: 400; }
-        .project-excerpt { font-size: 0.9rem; color: var(--gray); margin-bottom: 20px; }
+        .project-info span { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 700; }
+        .project-title { font-family: 'Libre Baskerville', serif; font-size: 2.5rem; margin: 20px 0; font-weight: 400; line-height: 1.2; }
+        .project-excerpt { font-size: 1rem; color: var(--gray); line-height: 1.7; margin-bottom: 30px; }
+        .view-case { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
 
-        .performance { background: #000; color: #fff; padding: 120px 10%; margin-top: 50px; }
-        .performance h2 { font-family: 'Libre Baskerville', serif; font-size: 2.5rem; margin-bottom: 40px; }
-        .perf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .perf-card { border-left: 1px solid #333; padding-left: 25px; }
-        .perf-card h3 { font-size: 2.2rem; color: var(--accent); margin-bottom: 10px; }
-        .perf-card p { font-size: 0.85rem; color: #888; line-height: 1.5; }
+        /* Bio Section */
+        .profile { background: #000; color: #fff; padding: 150px 10%; }
+        .profile-content { max-width: 800px; }
+        .profile h2 { font-family: 'Libre Baskerville', serif; font-size: 3rem; margin-bottom: 40px; font-weight: 400; }
+        .profile p { font-size: 1.2rem; line-height: 1.8; color: #ccc; margin-bottom: 30px; }
 
-        footer { padding: 120px 8%; text-align: left; border-top: 1px solid var(--border); }
-        .footer-cta { font-family: 'Libre Baskerville', serif; font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 40px; line-height: 1.2; }
-        .footer-cta a { color: var(--text); text-decoration: none; border-bottom: 2px solid var(--accent); }
+        footer { padding: 120px 8%; text-align: center; }
+        .footer-cta { font-family: 'Libre Baskerville', serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 50px; }
+        .footer-cta a { color: var(--text); text-decoration: none; border-bottom: 3px solid var(--accent); }
 
-        @media (max-width: 850px) { .work-grid { grid-template-columns: 1fr; } .perf-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 950px) {
+            .project, .project.reverse { grid-template-columns: 1fr; gap: 40px; margin-bottom: 100px; }
+            .hero { padding-top: 120px; }
+            .awards { flex-direction: column; gap: 30px; }
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">joão redondo</a>
+        <a href="index.html" class="logo">joão redondo.</a>
         <nav>
-            <a href="#work">Projetos</a>
-            <a href="mailto:joao.redondo92@gmail.com">Contacto</a>
+            <a href="mailto:joao.redondo92@gmail.com">Email</a>
         </nav>
     </header>
 
     <section class="hero">
         <span>Copywriter Criativo</span>
         <h1>Ideias que sobrevivem ao júri <em>e</em> ao mercado.</h1>
-        <p>A unir o rigor da performance à audácia criativa. Premiado pelo Clube de Criatividade de Portugal e pelos Lusófonos da Criatividade.</p>
-        <div class="award-strip">
-            <div class="award-item"><h4>Bronze</h4><p>Lusófonos '25</p></div>
-            <div class="award-item"><h4>Shortlist</h4><p>CCP Open Brief '23</p></div>
-            <div class="award-item"><h4>Top 10</h4><p>Talento em Ascensão</p></div>
+        <p>Especializado em transformar briefings complexos em conceitos que conquistam reconhecimento nacional e internacional. Com o selo de aprovação do CCP e dos Lusófonos.</p>
+        
+        <div class="awards">
+            <div class="award-item"><h4>Bronze</h4><p>Lusófonos da Criatividade '25</p></div>
+            <div class="award-item"><h4>Shortlist</h4><p>Clube de Criatividade de Portugal</p></div>
+            <div class="award-item"><h4>Top 10</h4><p>Briefing Aberto Nacional</p></div>
         </div>
     </section>
 
-    <main id="work" class="work-grid">
+    <main class="work-grid">
         <!-- CONTROL -->
         <a href="control.html" class="project">
-            <div class="project-img"><img src="images/control_capa.jpg" alt="Control Santos Populares"></div>
-            <span class="project-tag">Bronze / Santos Populares</span>
-            <h2 class="project-title">A metê-lo, todos os Santos ajudam.</h2>
-            <p class="project-excerpt">Como a Control sequestrou a maior festa popular de Lisboa através da síntese visual e da audácia verbal.</p>
+            <div class="project-img">
+                <img src="control_bus_side.jpg" alt="Control Santos Populares">
+            </div>
+            <div class="project-info">
+                <span>Award-Winning / Lusófonos</span>
+                <h2 class="project-title">A metê-lo, todos os Santos ajudam.</h2>
+                <p class="project-excerpt">Como a Control sequestrou a maior festa popular de Lisboa através da síntese visual e da audácia verbal.</p>
+                <span class="view-case">Ver Case Study</span>
+            </div>
         </a>
 
         <!-- LEROY MERLIN -->
-        <a href="#" class="project">
-            <div class="project-img"><img src="images/leroy_capa.jpg" alt="Leroy Merlin Efficiency"></div>
-            <span class="project-tag">Shortlist CCP / Open Brief</span>
-            <h2 class="project-title">A Eficiência do Silêncio.</h2>
-            <p class="project-excerpt">Estratégia premiada para posicionar a Leroy Merlin como líder em eficiência energética no mercado nacional.</p>
+        <a href="leroy.html" class="project reverse">
+            <div class="project-info">
+                <span>Shortlist / CCP 2023</span>
+                <h2 class="project-title">Em tua casa, A+ para ti.</h2>
+                <p class="project-excerpt">Uma estratégia de síntese que transformou as normas técnicas de eficiência num benefício humano aspiracional.</p>
+                <span class="view-case">Ver Case Study</span>
+            </div>
+            <div class="project-img">
+                <img src="leroy_capa.jpg" alt="Leroy Merlin Efficiency">
+            </div>
         </a>
-
-        <!-- MADER -->
-        <div class="project">
-            <div class="project-img"><img src="images/mader_capa.jpg" alt="Mader TV Spot"></div>
-            <span class="project-tag">Content Strategy / 2021-2023</span>
-            <h2 class="project-title">Mader: O Motor do Crescimento.</h2>
-            <p class="project-excerpt">Gestão integral de comunicação: de spots de TV a uma estratégia de YouTube que cresceu 200%.</p>
-        </div>
-
-        <!-- KURK -->
-        <div class="project">
-            <div class="project-img"><img src="images/kurk_capa.jpg" alt="Kurk Sunglasses"></div>
-            <span class="project-tag">Brand Launch / Photography</span>
-            <h2 class="project-title">Kurk Sunglasses.</h2>
-            <p class="project-excerpt">Lançamento de marca e fotografia de catálogo para a nova insígnia portuguesa de eyewear.</p>
-        </div>
     </main>
 
-    <section class="performance">
-        <h2>Resultados que falam.</h2>
-        <div class="perf-grid">
-            <div class="perf-card"><h3>2x</h3><p>Faturação duplicada na Bricomania (2021-2022 vs 2019-2020).</p></div>
-            <div class="perf-card"><h3>+685%</h3><p>Aumento de impressões orgânicas e pagas para a Mader Portugal.</p></div>
-            <div class="perf-card"><h3>Top 10</h3><p>Presença consistente nos principais radares criativos nacionais.</p></div>
+    <section class="profile">
+        <div class="profile-content">
+            <h2>Copy, Estratégia e Critério.</h2>
+            <p>O meu nome é João Redondo e não acredito em fórmulas mágicas. Acredito em briefings bem estudados, insights que doem de tão verdadeiros e frases que não desperdiçam o tempo de quem as lê.</p>
+            <p>O meu trabalho situa-se na interseção entre o que é visualmente impecável e o que é comercialmente implacável. Se procura alguém para escrever "textos", talvez não seja eu. Se procura alguém para encontrar a ideia que define a sua marca, falemos.</p>
         </div>
     </section>
 
     <footer>
-        <div class="footer-cta">Vamos elevar o seu próximo briefing? <br><a href="mailto:joao.redondo92@gmail.com">ola@joaoredondo.pt</a></div>
-        <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; text-transform: uppercase;">© 2024 João Redondo. All rights reserved.</p>
+        <div class="footer-cta">Vamos elevar o seu próximo briefing?<br><a href="mailto:joao.redondo92@gmail.com">Contactar agora.</a></div>
+        <p style="font-size: 0.7rem; color: #999; letter-spacing: 2px; text-transform: uppercase;">© 2024 João Redondo. Lisboa, Portugal.</p>
     </footer>
 </body>
 </html>
